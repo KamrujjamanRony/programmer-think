@@ -4,7 +4,7 @@ import { HiOutlineChatAlt2, HiOutlineUser } from "react-icons/hi";
 import PrimaryBtn from "../layout/Main/PrimaryBtn";
 
 const BlogCard = ({ blog }) => {
-  const { title, image, description } = blog;
+  const { title, image, description, date, author } = blog;
   return (
     <div className="card border w-full rounded-none">
       <img
@@ -16,7 +16,7 @@ const BlogCard = ({ blog }) => {
         <div className="flex justify-between">
           <div className="flex items-center">
             <HiOutlineUser className="text-primary mr-2" />
-            <p className="text-slate-400 text-sm">Rony</p>
+            <p className="text-slate-400 text-sm">{author}</p>
           </div>
           <div className="flex items-center">
             <HiOutlineChatAlt2 className="text-primary mr-2" />
@@ -24,14 +24,14 @@ const BlogCard = ({ blog }) => {
           </div>
           <div className="flex items-center">
             <AiOutlineCalendar className="text-primary mr-2" />
-            <p className="text-slate-400 text-sm">Nov 25, 2022</p>
+            <p className="text-slate-400 text-sm">{date}</p>
           </div>
         </div>
         <h2 className="text-2xl font-bold my-4">
           {title}
         </h2>
         <p className="mb-6">
-          {description}
+          {description.slice(0,173)}...
         </p>
         <div>
           <PrimaryBtn>READ MORE</PrimaryBtn>
